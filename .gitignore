@@ -1,0 +1,42 @@
+# Byte-compiled Python files
+*.pyc
+*.pyo
+__pycache__/
+
+# Virtual environment
+venv/
+env/
+
+# Environment variable files
+.env
+*.env
+
+# Temporary files
+*.tmp
+*.log
+*.bak
+*.swp
+*.swo
+
+# Data files
+*.csv
+*.xlsx
+*.json
+cleaned-*.csv
+
+# IDE/Editor specific files
+.vscode/
+.idea/
+*.iml
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# Build and distribution directories
+build/
+dist/
+*.egg-info/
