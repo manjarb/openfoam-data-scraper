@@ -141,5 +141,10 @@ def main():
     scraped_data.to_csv(args.output_path, index=False)
     print(f"[INFO] Scraping completed. Data saved to {args.output_path}.")
 
+    # Save as JSON
+    json_output_path = args.output_path.replace(".csv", ".json")
+    scraped_data.to_json(json_output_path, orient="records", indent=4)
+    print(f"[INFO] Scraping completed. JSON data saved to {json_output_path}.")
+
 if __name__ == "__main__":
     main()

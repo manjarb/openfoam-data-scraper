@@ -36,7 +36,9 @@ def main():
     file_dir, file_name = os.path.split(file_path)
     base_name, ext = os.path.splitext(file_name)
     output_name = f"cleaned-{base_name}{ext}"
+    output_json = f"cleaned-{base_name}.json"
     output_path = os.path.join(file_dir, output_name)
+    output_path_json = os.path.join(file_dir, output_json)
 
     # Load the data
     print(f"[INFO] Loading data from: {file_path}")
@@ -48,6 +50,10 @@ def main():
     # Save the cleaned data
     cleaned_data.to_csv(output_path, index=False)
     print(f"[INFO] Data cleaning completed. Cleaned data saved to: {output_path}")
+
+    # Save the cleaned data as JSON
+    cleaned_data.to_json(os.path.join(file_dir, output_path_json), orient="records", indent=4)
+    print(f"[INFO] Data cleaning completed. Cleaned JSON saved to: {output_path_json}")
 
 if __name__ == "__main__":
     main()
